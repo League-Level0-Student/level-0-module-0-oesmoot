@@ -26,15 +26,16 @@ public class AwesomeOrNot {
 			// -- tell the user whatever they entered is awesome!
 			JOptionPane.showMessageDialog(null, "That's awesome!"); }
 		// 6. If your variable is  1
-	
-			// -- tell the user whatever they entered is ok.
-	
+	if (random == 1) {
+			// -- tell the user whatever they entered is OK.
+	JOptionPane.showMessageDialog(null, "that's ok."); }
 		// 7. If your variable is  2
-	
+	if (random == 2) {
 			// -- tell the user whatever they entered is boring.
-	
+	JOptionPane.showMessageDialog(null, "thats BORING."); }
 		// 8. If your variable is  3
-	
+	if (random == 3) {
 			// -- invent your own message to give to the user (be nice).
+		JOptionPane.showMessageDialog(null, "you are an epok gamer"); }
 	}
 }
