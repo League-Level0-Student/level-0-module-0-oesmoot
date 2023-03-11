@@ -47,10 +47,15 @@ public class DragonFight {
 					playerAttack = ran.nextInt(25);}
 				// 6. Subtract the player attack value from the dragon's health
 				dragonHealth -= playerAttack;
+				
+				if (attackP.equals("reprogram")) {
+					dragonReprogram();
+					}
+				
 			// THE DRAGON RETALIATES
 
 				// 7. Find a random number between 0 and 35 and store it in dragonAttack
-						dragonAttack = ran.nextInt(25);
+						dragonAttack = ran.nextInt(35);
 				// 8. Subtract the dragon attack value from the player's health
 						playerHealth-= dragonAttack;
 			// ASSESS THE DAMAGE
@@ -58,34 +63,41 @@ public class DragonFight {
 				// 9. If the player's health is less than or equal to 0, the game is over,
 				//    call the playerLost() method
 						if (playerHealth <1){
-							playerLost(); }
+							playerLost();
+							}
 				// 10. If the dragon's health is less than or equal to 0, the game is over,
 				//     call the dragonLost() method
 						if (dragonHealth <1) {
-							dragonLost(); {
+							dragonLost(); 
+							}
 				// 11.  Pop up a message that tells us how much health the player and
 				// 		dragon have left.
-								
-			
+							JOptionPane.showMessageDialog(null, "dragon health: "+dragonHealth+", player health: "+playerHealth);}
+							
 			// (Bonus: Also display the amount of health that was lost by each in this
 			// round)
 			
 
-		} // this is the end of the while loop
-
-	}
+			}// this is the end of the while loop
 
 	static void playerLost() {
 		// 11. Tell the player that they have been defeated by the dragon and have no treasure
-
+		JOptionPane.showMessageDialog(null, "The dragon has defeated you, he proceeds to tear off all your remaining limbs except "
+				+ "for your head, then, he decides to bandage them up, leaving you alive, but completely disabled, his final move "
+				+ "is to cast a spell of immortality on you, so you will live on miserably with no penny, as deflation has become a huge problem."
+				+ " (the end lol you got the bad ending.)");
 
 		System.exit(0);   //This code ends the program
 	}
 
 	static void dragonLost() {
 		// 12. Tell the user that the dragon has been defeated and they get a ton of gold!
-
+		JOptionPane.showMessageDialog(null, "YESYESYESYESYESYESYESYESYEYSYEYSYESYESYEYSYESYES!!!!!!! IHAVEAPENNY!!!!! (good ending lol)");
 		System.exit(0);   //This code ends the program
 	}
+	static void dragonReprogram() {
+		JOptionPane.showMessageDialog(null, "You type a few lines of code into your computer, and suddenly, the dragon magically dissapears! But you know it wasn't any kind of magic, you reprogrammed it to nonexist! Now the beautiful penny is all yours. (secret ending, good job!)");
+		System.exit(0);
+	}
+	}
 
-}
